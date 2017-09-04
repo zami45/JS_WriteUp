@@ -12,7 +12,7 @@ Some Common Misuse of THIS :
 
 To use THIS in a javascript application, understanding the concept of THIS is a prerequisite. Incomplete or improper 
 understanding of this may lead to many unresolved and misunderstood bugs in the code. Some common errors which may 
-appear in your code due to incomplete understanding of THISkeyword will be discussed in this topic
+appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
 
 ### Creating Unwanted Global Variables :
 
@@ -119,8 +119,7 @@ need to bind THIS to an object or context of our own choosing in order to preven
 
 ### Some Consider THIS Points to Function Scope :
 
-To a beginner ,it is tempting to use THIS as a mean of accessing local variable inside a function.If we refer
-to the following piece of code 
+It is tempting to use THIS as a mean of accessing local variable inside a function. Consider the following piece of code 
 
 ```javascript
 function Person(){
@@ -130,10 +129,16 @@ function Person(){
     console.log(this.name)
 
 } 
+
+Person() // prints undefined 
 ```
 
 here name is a local variable declared inside a function called Person. Variable name is not available in global scope 
-as it belongs to the local scope of Person function A new comer in the javascript world, may find it provocative to 
-use THIS keyword to access the variable inside the function scope. Here,` console.log(this.name) ` will yield undefined.
-As you might guess it correctly , this.name will look for a global variable called name.As there is no global variable 
-called name declared , it will yield undefined.By no means this.name will refer to the local name variable.
+as it belongs to the local scope of Person function. Someone may find it provocative to use THIS keyword to access the 
+name variable inside the function scope. Here, after invocation you will see `undefined` in the console.
+
+`console.log(this.name) //will yield undefined.`
+
+As you might guess it correctly , `this.name` will look for a global variable called `name`.As there is no global variable 
+called `name` declared , it will yield undefined.By no means `this.name` will refer to the local name variable because this
+refers to global object.
