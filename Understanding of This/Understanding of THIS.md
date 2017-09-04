@@ -123,7 +123,7 @@ accessed from global scope and function scope (Local Scope) equally.In case you 
 
 the following illustration will provide a better understanding of relationship between global variable and  scope in javascript.
 
-`--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -                                                                              -
 -   Global Scope                                                               -
 -   (Declare Global Variable Here in Global Scope)                             - 
@@ -142,7 +142,7 @@ the following illustration will provide a better understanding of relationship b
 -                                                                              -
 -      }                                                                       -
 -                                                                              -
---------------------------------------------------------------------------------`
+--------------------------------------------------------------------------------
 
 Above illustration explains that global variable can be accessed from both in global scope (obviously, as they are 
 created in global scope) and Local scope.Now the actual point is how we can create global variable global variable 
