@@ -14,7 +14,7 @@ To use THIS in a javascript application, understanding the concept of THIS is a 
 understanding of this may lead to many unresolved and misunderstood bugs in the code.Some common errors which may 
 appear in your code due to incomplete understanding of THISkeyword will be discussed in this topic
 
-#### Creating Unwanted Global Variables :
+### Creating Unwanted Global Variables :
 
 We all know global variables, right? These are the variables which can be accessed from anywhere of your javascript
 code.Global variables can be accessed from global scope and function scope (Local Scope) equally.In case you don't 
@@ -108,7 +108,7 @@ console.log(name) // prints "zami"
 
 Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword
 
-###### Some Consider THIS Points to Function Scope :
+### Some Consider THIS Points to Function Scope :
 
 To a beginner ,it is tempting to use THIS as a mean of accessing local variable inside a function.If we refer
 to the following piece of code 
