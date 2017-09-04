@@ -4,24 +4,24 @@ Introduction
 One of the most confusing and misused keyword in javascript is THIS keyword.For a javascript beginner THIS 
 feels like shrouded in mystery.But if properly used THIS can be proved as a valuable asset in the toolbox of 
 a javascript developer.Here I would like to shed some light on different misused cases of THIS keyword and 
-techniques to manipulate THIS in a javascript application.As the word this has its own meaning ,in this
+techniques to manipulate THIS in a javascript application.As the word this bears its own meaning ,in this
 discussion i will refer to the keyword THIS in capital letter.
 
 Some Common Misuse of THIS :
 ----------------------------
 
-To use THIS in a javascript application, understanding the concept of THIS is a prerequisite.Incomplete or improper 
-understanding of this may lead to many unresolved and misunderstood bugs in the code.Some common errors which may 
+To use THIS in a javascript application, understanding the concept of THIS is a prerequisite. Incomplete or improper 
+understanding of this may lead to many unresolved and misunderstood bugs in the code. Some common errors which may 
 appear in your code due to incomplete understanding of THISkeyword will be discussed in this topic
 
 ### Creating Unwanted Global Variables :
 
-We all know global variables, right? These are the variables which can be accessed from anywhere of your javascript
-code.Global variables can be accessed from global scope and function scope (Local Scope) equally.In case you don't 
-know javascript deals with two different kinds of scope,They are
+We all know global variables, right? These are the variables which can be accessed from anywhere in your javascript
+code. Global variables can be accessed from global scope and function scope (Local Scope) equally. In case you don't 
+know javascript deals with two different kinds of scopes,They are
 
 1. Global Scope
-2. Function Scope (aka Local Scope)
+2. Function Scope (Local Scope)
 
 the following illustration will provide a better understanding of relationship between global variable and  scope in 
 javascript.
@@ -30,8 +30,8 @@ javascript.
 //javascript world
 --------------------------------------------------------------------------------
 -                                                                              -
--   Global Scope                                                               -
--   (Declare Global Variable Here in Global Scope)                             - 
+-   //Global Scope                                                             -
+-   //Declare Global Variable Here in Global Scope                             - 
 -   var global_var = "global variable" //here global_var is a global variable  -
 -                                                                              -
 -   function sample_function(callback){                                        -
@@ -51,9 +51,11 @@ javascript.
 --------------------------------------------------------------------------------
 ```
 Above illustration explains that global variable can be accessed from both in global scope (obviously, as they are 
-created in global scope) and Local scope.Now the actual point is how we can create global variable global variable 
-unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in 
-javascript.They are used to create new object.General layout of  a constructor function is 
+created in global scope) and Local scope(Within any function). 
+
+Now the actual point is how we can create global variable global variable unknowingly due to lack of proper understanding 
+of THIS keyword.We are all familiar with constructor function in javascript. They are used to create new object.General 
+layout of  a constructor function is 
 
 ```javascript
 function Person(){
@@ -63,7 +65,7 @@ function Person(){
 }
 ```
 
-just keep in mind that this inside a function refers to global object.It is a default behaviour of THIS keyword.This 
+just keep in mind that THIS inside a function refers to global object.It is a default behaviour of THIS keyword.This 
 behaviour can be changed with the help of NEW keyword.I shall explain it later.But for now keep in mind that THIS 
 refers to global object (window object) by default.Any global variable becomes a property of global object.We can 
 access any global variable through THIS keyword.
@@ -88,9 +90,10 @@ console.log(this.global_var)
 
 both works equally.
 
-Now back to our Person constructor function. A global variable called name can be created on the fly using this.name 
-expression .If we invoke the Person function , a global variable called name will be created and "zami" string will be
-assigned to that name variable
+Now back to our Person constructor function. A global variable called name can be created on the fly using `this.name = "zami"` 
+expression inside Person function.If we invoke the Person function , a global variable called name will be created and
+"zami" string will be assigned to that name variable.In the mean time a property called name will be added to global
+object as i've stated earlier.
 
 ```javascript
 function Person(){
@@ -101,12 +104,18 @@ function Person(){
 
 Person()
 
+//a property called name is added to global object
 //now name variable can be accessed from global scope 
 
 console.log(name) // prints "zami" 
+
+console.log(this.name) // prints "zami"
+
+console.log(window.name) // prints "zami"
 ```
 
-Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword
+Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword.We 
+need to bind THIS to an object or context of our own choosing in order to prevent this from happening.
 
 ### Some Consider THIS Points to Function Scope :
 
