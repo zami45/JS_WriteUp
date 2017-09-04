@@ -18,16 +18,20 @@ appear in your code due to incomplete understanding of THIS keyword will be disc
 
 
 We all know global variables, right? These are the variables which can be accessed from anywhere in your javascript
-code. Global variables can be accessed from global scope and function scope (Local Scope) equally. In case you don't 
-know javascript deals with two different kinds of scopes,They are
+code. Global variables can be accessed from global scope and function scope (Local Scope) equally. Chances are that
+you might never heard of the concept of scope. So, I would like to discuss about the concept of scope in a nutshell.
+ 
+Simply put, Scope controls the visibility of a variable. Variables declared in global scope , has global visibility.They are 
+accessible from anywhere in the script.On the other hand local variable resides in local scope (alos known as function
+scope). So we can say, javascript deals with two different kinds of scopes,They are :
 
 1. Global Scope
 2. Function Scope (Local Scope)
 
 the following illustration will provide a better understanding of relationship between global variable and  scope in 
 javascript.
-```javascript
 
+```javascript
 //javascript world
 --------------------------------------------------------------------------------
 -                                                                              -
@@ -139,7 +143,9 @@ here name is a local variable declared inside a function called Person. Variable
 as it belongs to the local scope of Person function. Someone may find it provocative to use THIS keyword to access the 
 name variable inside the function scope. Here, after invocation you will see `undefined` in the console.
 
-`console.log(this.name) //will yield undefined.`
+```javascript
+console.log(this.name) //will yield undefined
+```
 
 As you might guess it correctly , `this.name` will look for a global variable called `name`.As there is no global variable 
 called `name` declared , it will yield undefined.By no means `this.name` will refer to the local name variable because this
