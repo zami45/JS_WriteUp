@@ -69,7 +69,7 @@ refers to global object (window object) by default.Any global variable becomes a
 access any global variable through THIS keyword.
 
 ```javascript
-  var global_var  = "a global variable" 
+var global_var  = "a global variable" 
 ```
 
 if we want to print the global_var we can access it directly by name 
