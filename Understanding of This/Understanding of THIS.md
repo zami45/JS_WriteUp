@@ -52,27 +52,35 @@ created in global scope) and Local scope.Now the actual point is how we can crea
 unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in 
 javascript.They are used to create new object.General layout of  a constructor function is 
 
+```javascript
 function Person(){
 
    this.name = "zami"
 }
+```
 
 just keep in mind that this inside a function refers to global object.It is a default behaviour of THIS keyword.This 
 behaviour can be changed with the help of NEW keyword.I shall explain it later.But for now keep in mind that THIS 
 refers to global object (window object) by default.Any global variable becomes a property of global object.We can 
 access any global variable through THIS keyword.
 
-` var global_var  = "a global variable" `
+```javascript
+  var global_var  = "a global variable" 
+```
 
 if we want to print the global_var we can access it directly by name 
 
-` console.log(global_var) `
+```javascript
+console.log(global_var) 
+```
 
 On the other hand we can access it through global object or window object
 
-` console.log(window.global_var) 
+```javascript
+console.log(window.global_var) 
 & 
-console.log(this.global_var) `
+console.log(this.global_var) 
+```
 
 both works equally.
 
@@ -80,7 +88,8 @@ Now back to our Person constructor function. A global variable called name can b
 expression .If we invoke the Person function , a global variable called name will be created and "zami" string will be
 assigned to that name variable
 
-` function Person(){
+```javascript
+ function Person(){
 this.name = "zami";
 }
 
@@ -88,20 +97,23 @@ Person()
 
 now name variable can be accessed from global scope 
 
-console.log(name) // prints "zami" `
+console.log(name) // prints "zami" 
+```
 
 Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword
 
-######Some Consider THIS Points to Function Scope :
+###### Some Consider THIS Points to Function Scope :
 
 To a beginner ,it is tempting to use THIS as a mean of accessing local variable inside a function.If we refer
 to the following piece of code 
 
-` function Person(){
-var name = "zami"
-console.log(this.name)
+```javascript
+function Person(){
+    var name = "zami"
+    console.log(this.name)
 
-} `
+} 
+```
 
 here name is a local variable declared inside a function called Person. Variable name is not available in global scope 
 as it belongs to the local scope of Person function A new comer in the javascript world, may find it provocative to 
