@@ -110,9 +110,9 @@ Person()
 
 console.log(name) // prints "zami" 
 
-console.log(this.name) // prints "zami"
+console.log(this.name) // also prints "zami"
 
-console.log(window.name) // prints "zami"
+console.log(window.name) // also prints "zami"
 ```
 
 Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword.We 
