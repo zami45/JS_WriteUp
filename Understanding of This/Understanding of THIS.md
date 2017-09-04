@@ -25,7 +25,7 @@ know javascript deals with two different kinds of scope,They are
 
 the following illustration will provide a better understanding of relationship between global variable and  scope in 
 javascript.
-
+```javascript
 --------------------------------------------------------------------------------
 -                                                                              -
 -   Global Scope                                                               -
@@ -46,7 +46,7 @@ javascript.
 -      }                                                                       -
 -                                                                              -
 --------------------------------------------------------------------------------
-
+```
 Above illustration explains that global variable can be accessed from both in global scope (obviously, as they are 
 created in global scope) and Local scope.Now the actual point is how we can create global variable global variable 
 unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in 
