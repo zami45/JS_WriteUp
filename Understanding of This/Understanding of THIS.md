@@ -2,19 +2,19 @@ Introduction
 ------------
 
 One of the most confusing and misused keyword in javascript is THIS keyword.For a javascript beginner THIS 
-feels like shrouded in mystry.But if properly used THIS can be proved as a valuable asset in the toolbox of 
-a javascript developer.Here i would like to shed some lignt on different misused cases of THIS keyword and 
+feels like shrouded in mystery.But if properly used THIS can be proved as a valuable asset in the toolbox of 
+a javascript developer.Here I would like to shed some light on different misused cases of THIS keyword and 
 techniques to manipulate THIS in a javascript application.As the word this has its own meaning ,in this
 discussion i will refer to the keyword THIS in capital letter.
 
 Some Common Misuse of THIS :
 ----------------------------
 
-To use THIS in a javascript application, understanding the concept of THIS is a prerequisit.Incomplete or no 
-proper understanding of this can lead to many unresolved and misunderstood bugs in the code.Some common errors 
-which may appear in your code due to incomplete understanding of THISkeyword will be discussed in this topic
+To use THIS in a javascript application, understanding the concept of THIS is a prerequisite.Incomplete or improper 
+understanding of this may lead to many unresolved and misunderstood bugs in the code.Some common errors which may 
+appear in your code due to incomplete understanding of THISkeyword will be discussed in this topic
 
-###### Creating Unwanted Global Variables :
+#### Creating Unwanted Global Variables :
 
 We all know global variables, right? These are the variables which can be accessed from anywhere of your javascript
 code.Global variables can be accessed from global scope and function scope (Local Scope) equally.In case you don't 
