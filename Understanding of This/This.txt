@@ -46,7 +46,7 @@ Some Common Misuse of THIS :
 		-                                                                              -
 		--------------------------------------------------------------------------------
 
-            Above illustration explains that global variable can be accessed from both in global scope (obviously, as they are created in global scope) and Local scope.Now
+                Above illustration explains that global variable can be accessed from both in global scope (obviously, as they are created in global scope) and Local scope.Now
 		the actual point is how we can create global variable global variable unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with 
 		constructor function in javascript.They are used to create new object.General layout of  a constructor function is 
 		
@@ -71,7 +71,7 @@ Some Common Misuse of THIS :
 		
 		function Person(){
 		    this.name = "zami";
-	    }
+	       }
 		
 		Person()
 		
