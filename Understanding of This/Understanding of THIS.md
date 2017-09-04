@@ -118,7 +118,7 @@ console.log(window.name) // also prints "zami"
 Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword.We 
 need to bind THIS to an object or context of our own choosing in order to prevent this from happening.
 
-#### 2. Some Consider THIS Points to Function Scope :
+#### **2. Some Consider THIS Points to Function Scope :**
 
 
 It is tempting to use THIS as a mean of accessing local variable inside a function. Consider the following piece of code 
