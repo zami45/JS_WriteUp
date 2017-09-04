@@ -32,18 +32,19 @@ javascript.
 -   (Declare Global Variable Here in Global Scope)                             - 
 -   var global_var = "global variable" //here global_var is a global variable  -
 -                                                                              -
--      function sample_function(callback){                                     -
+-   function sample_function(callback){                                        -
 -                                                                              -
--          var local_var = "local variable" // it's a local variable           -
+-      var local_var = "local variable" // it's a local variable               -
 -                                                                              -
--         /* function scope resides inside a function                          -
--            inside a function we can declare local variable                   - 
--            Local variables can't be accessed from outside of the function    -
--            scope but we can access any global variable from here             -
--            global_var  can be accessed within this function                  -
+-         /*                                                                   -
+-          function scope resides inside a function                            -
+-          inside a function we can declare local variable                     - 
+-          Local variables can't be accessed from outside of the function      -
+-          scope but we can access any global variable from here               -
+-          global_var  can be accessed within this function                    -
 -         */                                                                   -
 -                                                                              -
--      }                                                                       -
+-     }                                                                        -
 -                                                                              -
 --------------------------------------------------------------------------------
 ```
