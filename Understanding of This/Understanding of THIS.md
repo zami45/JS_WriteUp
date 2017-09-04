@@ -68,7 +68,7 @@ Some Common Misuse of THIS :
             Now back to our Person constructor function. A global variable called name can be created on the fly using this.name expression .If we invoke the Person
         function , a global variable called name will be created and "zami" string will be assigned to that name variable
         
-        ` function Person(){
+        `function Person(){
             this.name = "zami";
            }
         
@@ -76,7 +76,7 @@ Some Common Misuse of THIS :
         
         now name variable can be accessed from global scope 
         
-        console.log(name) // prints "zami" `
+        console.log(name) // prints "zami"`
         
         Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword
         
