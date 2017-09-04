@@ -39,7 +39,7 @@ javascript.
 -   //Declare Global Variable Here in Global Scope                             - 
 -   var global_var = "global variable" //here global_var is a global variable  -
 -                                                                              -
--   function sample_function(callback){                                        -
+-   function sample_js_function(){                                             -
 -                                                                              -
 -      var local_var = "local variable" // it's a local variable               -
 -                                                                              -
