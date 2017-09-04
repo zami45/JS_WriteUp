@@ -7,7 +7,7 @@ a javascript developer.Here I would like to shed some light on different misused
 techniques to manipulate THIS in a javascript application.As the word this bears its own meaning ,in this
 discussion i will refer to the keyword THIS in capital letter.
 
-Some Common Misuse of THIS :
+Some Common Misuse of THIS 
 ----------------------------
 
 To use THIS in a javascript application, understanding the concept of THIS is a prerequisite. Incomplete or improper 
@@ -15,6 +15,7 @@ understanding of this may lead to many unresolved and misunderstood bugs in the 
 appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
 
 #### Creating Unwanted Global Variables :
+-----------------------------------------
 
 We all know global variables, right? These are the variables which can be accessed from anywhere in your javascript
 code. Global variables can be accessed from global scope and function scope (Local Scope) equally. In case you don't 
@@ -118,6 +119,7 @@ Thus using THIS we can create global variable on the fly if we don't have proper
 need to bind THIS to an object or context of our own choosing in order to prevent this from happening.
 
 #### Some Consider THIS Points to Function Scope :
+--------------------------------------------------
 
 It is tempting to use THIS as a mean of accessing local variable inside a function. Consider the following piece of code 
 
