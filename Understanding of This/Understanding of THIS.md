@@ -56,6 +56,7 @@ javascript.They are used to create new object.General layout of  a constructor f
 function Person(){
 
    this.name = "zami"
+   
 }
 ```
 
@@ -89,13 +90,15 @@ expression .If we invoke the Person function , a global variable called name wil
 assigned to that name variable
 
 ```javascript
- function Person(){
-this.name = "zami";
+function Person(){
+
+    this.name = "zami";
+	
 }
 
 Person()
 
-now name variable can be accessed from global scope 
+//now name variable can be accessed from global scope 
 
 console.log(name) // prints "zami" 
 ```
@@ -109,7 +112,9 @@ to the following piece of code
 
 ```javascript
 function Person(){
+
     var name = "zami"
+	
     console.log(this.name)
 
 } 
