@@ -25,7 +25,8 @@ you might never heard of the concept of scope. So, I would like to discuss about
  
 Simply put, Scope controls the visibility of a variable. Variables declared in global scope , has global visibility.They are 
 accessible from anywhere in the script.On the other hand local variable resides in local scope (alos known as function
-scope). So we can say, javascript deals with two different kinds of scopes,They are :
+scope). Visibility of local variable is limited to local scope. Outside environment can not access a local variable. It is only 
+available to local scope. So we can say, javascript deals with two different kinds of scopes,They are :
 
 1. Global Scope
 2. Function Scope (Local Scope)
