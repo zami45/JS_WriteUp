@@ -86,7 +86,7 @@ console.log(this.global_var) // access global_var thorugh THIS. So, THIS === win
 
 both works equally.
 
-Now back to our Person constructor function. A global variable called name can be created on the fly when javascript interpreter hit this `this.name = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `name` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
+Now back to our Person constructor function. Try to think what might happen if we invoke Person function. A global variable called name can be created on the fly when javascript interpreter hit this `this.name = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `name` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
 
 If we invoke the Person function , a global variable called name will be created and `"zami"` string will be assigned to that name variable.In the mean time a property called name will be added to global object as i've stated earlier.
 
