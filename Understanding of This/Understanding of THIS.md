@@ -82,18 +82,18 @@ access any global variable through THIS keyword.
 var global_var  = "a global variable" 
 ```
 
-if we want to print the global_var we can access it directly by name 
+if we want to print the global_var we can access it directly by the variable name 
 
 ```javascript
 console.log(global_var) 
 ```
 
-On the other hand we can access it through global object or window object
+On the other hand, as we already know global variables are added to global/window object as property, we can also access the `global_var` variable through global object or window object
 
 ```javascript
-console.log(window.global_var) 
+console.log(window.global_var) // access global_var through window object
 & 
-console.log(this.global_var) 
+console.log(this.global_var) // access global_var thorugh THIS. So, THIS === window
 ```
 
 both works equally.
