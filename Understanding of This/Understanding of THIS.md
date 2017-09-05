@@ -53,7 +53,7 @@ Now the actual point is how we can create global variable global variable unknow
 ```javascript
 function Person(){
 
-   this.name = "zami"
+   this.username = "zami"
    
 }
 ```
@@ -64,7 +64,7 @@ just keep in mind that THIS inside a function refers to global object.It is a de
 var global_var  = "a global variable" 
 ```
 
-if we want to print the global_var we can access it directly by the variable name 
+if we want to print the global_var we can access it directly by the variable username 
 
 ```javascript
 console.log(global_var) 
@@ -80,27 +80,27 @@ console.log(this.global_var) // access global_var thorugh THIS. So, THIS === win
 
 both works equally.
 
-Now back to our Person constructor function. Try to think what might happen if we invoke Person function. A global variable called name can be created on the fly when javascript interpreter hit this `this.name = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `name` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
+Now back to our Person constructor function. Try to think what might happen if we invoke Person function. A global variable called username can be created on the fly when javascript interpreter hit this `this.username = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `username` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
 
-If we invoke the Person function , a global variable called name will be created and `"zami"` string will be assigned to that name variable.In the mean time a property called name will be added to global object as i've stated earlier.
+If we invoke the Person function , a global variable called username will be created and `"zami"` string will be assigned to that username variable.In the mean time a property called username will be added to global object as i've stated earlier.
 
 ```javascript
 function Person(){
 
-    this.name = "zami";
+    this.username = "zami";
 	
 }
 
 Person()
 
-//a property called name is added to global object
-//now name variable can be accessed from global scope 
+//a property called username is added to global object
+//now username variable can be accessed from global scope 
 
-console.log(name) // prints "zami" 
+console.log(username) // prints "zami" 
 
-console.log(this.name) // also prints "zami"
+console.log(this.username) // also prints "zami"
 
-console.log(window.name) // also prints "zami"
+console.log(window.username) // also prints "zami"
 ```
 
 Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword.We need to bind THIS to an object or context of our own choosing in order to prevent this from happening.
@@ -113,19 +113,19 @@ It is tempting to use THIS as a mean of accessing local variable inside a functi
 ```javascript
 function Person(){
 
-    var name = "zami"
+    var username = "zami"
 	
-    console.log(this.name)
+    console.log(this.username)
 
-} 
+}
 
 Person() // prints undefined 
 ```
 
-here name is a local variable declared inside a function called Person. Variable name is not available in global scope as it belongs to the local scope of Person function. Someone may find it provocative to use THIS keyword to access the name variable inside the function scope. Here, after invocation you will see `undefined` in the console.
+here username is a local variable declared inside a function called Person. Variable username is not available in global scope as it belongs to the local scope of Person function. Someone may find it provocative to use THIS keyword to access the username variable inside the function scope. Here, after invocation you will see `undefined` in the console.
 
 ```javascript
-console.log(this.name) //will yield undefined
+console.log(this.username) //will yield undefined
 ```
 
-As you might guess it correctly , `this.name` will look for a global variable called `name`.As there is no global variable called `name` declared , it will yield undefined.By no means `this.name` will refer to the local name variable because this refers to global object.
+As you might guess it correctly , `this.username` will look for a global variable called `username`.As there is no global variable called `username` declared , it will yield undefined.By no means `this.username` will refer to the local username variable because this refers to global object.
