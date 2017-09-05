@@ -73,10 +73,7 @@ function Person(){
 }
 ```
 
-just keep in mind that THIS inside a function refers to global object.It is a default behaviour of THIS keyword.This 
-behaviour can be changed with the help of NEW keyword.I shall explain it later.But for now keep in mind that THIS 
-refers to global object (window object) by default.Any global variable becomes a property of global object.We can 
-access any global variable through THIS keyword.
+just keep in mind that THIS inside a function refers to global object.It is a default behaviour of THIS keyword.This behaviour can be changed with the help of NEW keyword.I shall explain it later.But for now keep in mind that THIS refers to global object (window object) by default.Any global variable becomes a property of global object.We can access any global variable through THIS keyword.
 
 ```javascript
 var global_var  = "a global variable" 
@@ -121,8 +118,7 @@ console.log(this.name) // also prints "zami"
 console.log(window.name) // also prints "zami"
 ```
 
-Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword.We 
-need to bind THIS to an object or context of our own choosing in order to prevent this from happening.
+Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword.We need to bind THIS to an object or context of our own choosing in order to prevent this from happening.
 
 #### **2. Some Consider THIS Points to Function Scope :**
 
@@ -141,14 +137,10 @@ function Person(){
 Person() // prints undefined 
 ```
 
-here name is a local variable declared inside a function called Person. Variable name is not available in global scope 
-as it belongs to the local scope of Person function. Someone may find it provocative to use THIS keyword to access the 
-name variable inside the function scope. Here, after invocation you will see `undefined` in the console.
+here name is a local variable declared inside a function called Person. Variable name is not available in global scope as it belongs to the local scope of Person function. Someone may find it provocative to use THIS keyword to access the name variable inside the function scope. Here, after invocation you will see `undefined` in the console.
 
 ```javascript
 console.log(this.name) //will yield undefined
 ```
 
-As you might guess it correctly , `this.name` will look for a global variable called `name`.As there is no global variable 
-called `name` declared , it will yield undefined.By no means `this.name` will refer to the local name variable because this
-refers to global object.
+As you might guess it correctly , `this.name` will look for a global variable called `name`.As there is no global variable called `name` declared , it will yield undefined.By no means `this.name` will refer to the local name variable because this refers to global object.
