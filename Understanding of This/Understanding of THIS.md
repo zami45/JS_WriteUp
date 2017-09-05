@@ -19,20 +19,14 @@ appear in your code due to incomplete understanding of THIS keyword will be disc
 #### 1. Creating Unwanted Global Variables :
 
 
-We all know global variables, right? These are the variables which can be accessed from anywhere in your javascript
-code. Global variables can be accessed from global scope and function scope (Local Scope) equally. Chances are that
-you might never heard of the concept of scope. So, I would like to discuss about the concept of scope in a nutshell.
+We all know global variables, right? These are the variables which can be accessed from anywhere in your javascript code. Global variables can be accessed from global scope and function scope (Local Scope) equally. Chances are that you might never heard of the concept of scope. So, I would like to discuss about the concept of scope in a nutshell.
  
-Simply put, Scope controls the visibility of a variable. Variables declared in global scope , has global visibility.They are 
-accessible from anywhere in the script.On the other hand local variable resides in local scope (alos known as function
-scope). Visibility of local variable is limited to local scope. Outside environment can not access a local variable. It is only 
-available to local scope. So we can say, javascript deals with two different kinds of scopes,They are :
+Simply put, Scope controls the visibility of a variable. Variables declared in global scope , has global visibility.They are accessible from anywhere in the script.On the other hand local variable resides in local scope (alos known as function scope). Visibility of local variable is limited to local scope. Outside environment can not access a local variable. It is only available to local scope. So we can say, javascript deals with two different kinds of scopes,They are :
 
 1. Global Scope
 2. Function Scope (Local Scope)
 
-the following illustration will provide a better understanding of relationship between global variable and  scope in 
-javascript.
+the following illustration will provide a better understanding of relationship between global variable and  scope in javascript.
 
 ```javascript
 //javascript world
@@ -58,12 +52,9 @@ javascript.
 -                                                                              -
 --------------------------------------------------------------------------------
 ```
-Above illustration explains that global variable can be accessed from both in global scope (obviously, as they are 
-created in global scope) and Local scope(Within any function). 
+Above illustration explains that global variable can be accessed from both in global scope (obviously, as they are created in global scope) and Local scope(Within any function). 
 
-Now the actual point is how we can create global variable global variable unknowingly due to lack of proper understanding 
-of THIS keyword.We are all familiar with constructor function in javascript. They are used to create new object.General 
-layout of  a constructor function is 
+Now the actual point is how we can create global variable global variable unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in javascript. They are used to create new object.General layout of  a constructor function is 
 
 ```javascript
 function Person(){
@@ -85,7 +76,7 @@ if we want to print the global_var we can access it directly by the variable nam
 console.log(global_var) 
 ```
 
-On the other hand, as we already know global variables are added to global/window object as property, we can also access the `global_var` variable through global object or window object
+On the other hand, as we already know global variables are added to global/window object as property,we can also access the `global_var` variable through global object or window object
 
 ```javascript
 console.log(window.global_var) // access global_var through window object
