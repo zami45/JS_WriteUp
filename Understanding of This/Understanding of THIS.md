@@ -8,7 +8,7 @@ Some Common Misuse of THIS
 ----------------------------
 
 In order to write better and modular javascript code, understanding the concept of THIS is a prerequisite. Incomplete or improper 
-understanding of this may lead to many unresolved and misunderstood bugs in the code. Some common errors which may appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
+understanding may lead to many unresolved and misunderstood bugs in the code. Some common errors which may appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
 
 #### 1. Creating Unwanted Global Variables :
 
