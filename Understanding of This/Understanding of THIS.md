@@ -21,7 +21,7 @@ Simply put, Scope controls the visibility of a variable. Variables declared in g
 - **Global Scope**
 - **Function Scope (Local Scope)**
 
-the following illustration will provide a better understanding of relationship between global variable and  scope in javascript.
+Here is a visual illustration for the secret world of javascript. Following illustration will provide a better understanding on relationship between variables and scope in javascript.
 
 ```javascript
 //javascript world
