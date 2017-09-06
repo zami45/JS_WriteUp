@@ -18,8 +18,8 @@ visibility depends on its scope. Global variables can be accessed from global sc
  
 Simply put, Scope controls the visibility of a variable. Variables declared in global scope , has global visibility.They are accessible from anywhere in the script.On the other hand local variable resides in local scope (alos known as function scope). Visibility of local variable is limited to local scope. Generally Outside environment can not access a local variable. Of course there are some ways to interact with local variables from outside environment, But that discussion is for later.For now let's just stick to the fact that local variables are confined to local scope. They are only available in local scope. So we can say, javascript deals with two different kinds of scopes,They are :
 
-- Global Scope
-- Function Scope (Local Scope)
+- **Global Scope**
+- **Function Scope (Local Scope)**
 
 the following illustration will provide a better understanding of relationship between global variable and  scope in javascript.
 
