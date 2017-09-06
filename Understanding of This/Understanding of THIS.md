@@ -49,6 +49,30 @@ Here is a visual illustration for the secret world of javascript. Following illu
 ```
 Above illustration explains that global variable can be accessed from both in global scope (obviously, as they are created in global scope) and Local scope(Within any function). 
 
+ keep in mind that THIS refers to global object (window object) by default.Any global variable becomes a property of global object.We can access any global variable through THIS keyword.THIS is analogas to window object. If we check strict equality between THIS and window , it will return true 
+ 
+ ```javascript
+ THIS === window // true
+```
+Let's justify what i've just said with an example.For this, we need to create a global variable first. Let's create one 
+
+```javascript
+var global_var  = "a global variable" 
+```
+If we want to see what value our global_var variable holds, we can access it directly by the variable name 
+
+```javascript
+console.log(global_var) // prints "a global variable"
+```
+On the other hand, as we already know global variables are added to global/window object as property,we can also access the `global_var` variable through global object or window object
+
+```javascript
+console.log(window.global_var) // access global_var through window object, prints "a global variable"
+& 
+console.log(this.global_var) // access global_var thorugh THIS. So, THIS === window
+```
+both works equally.
+
 Now the actual point is how we can create global variable unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in javascript. They are used to create new object.General layout of  a constructor function is 
 
 ```javascript
@@ -59,29 +83,9 @@ function Person(){
 }
 ```
 
-just keep in mind that THIS inside a function refers to global object.It is a default behaviour of THIS keyword.This behaviour can be changed with the help of NEW keyword.I shall explain it later.But for now keep in mind that THIS refers to global object (window object) by default.Any global variable becomes a property of global object.We can access any global variable through THIS keyword.
+just keep in mind that THIS inside a function refers to global object.It is a default behaviour of THIS keyword.This behaviour can be changed with the help of NEW keyword.I shall explain it later.
 
-```javascript
-var global_var  = "a global variable" 
-```
-
-if we want to print the global_var we can access it directly by the variable username 
-
-```javascript
-console.log(global_var) 
-```
-
-On the other hand, as we already know global variables are added to global/window object as property,we can also access the `global_var` variable through global object or window object
-
-```javascript
-console.log(window.global_var) // access global_var through window object
-& 
-console.log(this.global_var) // access global_var thorugh THIS. So, THIS === window
-```
-
-both works equally.
-
-Now back to our Person constructor function. Try to think what might happen if we invoke Person function. A global variable called username can be created on the fly when javascript interpreter hit this `this.username = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `username` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
+Try to think what might happen if we invoke Person function. A global variable called username can be created on the fly when javascript interpreter hit this `this.username = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `username` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
 
 If we invoke the Person function , a global variable called username will be created and `"zami"` string will be assigned to that username variable.In the mean time a property called username will be added to global object as i've stated earlier.
 
