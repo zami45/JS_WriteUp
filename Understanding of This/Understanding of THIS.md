@@ -13,9 +13,10 @@ understanding may lead to many unresolved and misunderstood bugs in the code. So
 #### 1. Creating Unwanted Global Variables :
 
 
-We all know global variables, right? These are the variables which can be accessed from anywhere in your javascript code. Global variables can be accessed from global scope and function scope (Local Scope) equally. Chances are that you might never heard of the concept of scope. So, I would like to discuss about the concept of scope in a nutshell.
+We all know global variables, right? These are the variables which can be accessed from anywhere in your javascript code.A variable's
+visibility depends on its scope. Global variables can be accessed from global scope and function scope (Local Scope) equally. Chances are that you might not be familier with the concept of scope. So,I would like to discuss here about the concept of scope in a nutshell.
  
-Simply put, Scope controls the visibility of a variable. Variables declared in global scope , has global visibility.They are accessible from anywhere in the script.On the other hand local variable resides in local scope (alos known as function scope). Visibility of local variable is limited to local scope. Outside environment can not access a local variable. It is only available to local scope. So we can say, javascript deals with two different kinds of scopes,They are :
+Simply put, Scope controls the visibility of a variable. Variables declared in global scope , has global visibility.They are accessible from anywhere in the script.On the other hand local variable resides in local scope (alos known as function scope). Visibility of local variable is limited to local scope. Generally Outside environment can not access a local variable. Of course there are some ways to interact with local variables from outside environment, But that discussion is for later.For now let's just stick to the fact that local variables are confined to local scope. They are only available in local scope. So we can say, javascript deals with two different kinds of scopes,They are :
 
 1. Global Scope
 2. Function Scope (Local Scope)
