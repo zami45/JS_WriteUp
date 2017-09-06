@@ -83,9 +83,9 @@ function Person(){
 }
 ```
 
-just keep in mind that THIS inside a function refers to global object.It is a default behaviour of THIS keyword.This behaviour can be changed with the help of NEW keyword.I shall explain it later.
+just keep in mind that if no other execution context is provided, THIS inside a function refers to global object.It is a default behaviour of THIS keyword.
 
-Try to think what might happen if we invoke Person function. A global variable called username can be created on the fly when javascript interpreter hit this `this.username = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `username` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
+Try to think what might happen if we invoke Person function. A global variable called username can be created on the fly when javascript interpreter hit `this.username = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `username` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
 
 If we invoke the Person function , a global variable called username will be created and `"zami"` string will be assigned to that username variable.In the mean time a property called username will be added to global object as i've stated earlier.
 
@@ -103,12 +103,14 @@ Person()
 
 console.log(username) // prints "zami" 
 
+// as a property called username is added to global object, we can access it thourgh THIS or window
+
 console.log(this.username) // also prints "zami"
 
 console.log(window.username) // also prints "zami"
 ```
 
-Thus using THIS we can create global variable on the fly if we don't have proper understanding of THIS keyword.We need to bind THIS to an object or context of our own choosing in order to prevent this from happening.
+Thus using THIS, we can create global variable on the fly if we don't have proper understanding of THIS keyword.
 
 #### **2. Some Consider THIS Points to Function Scope :**
 
