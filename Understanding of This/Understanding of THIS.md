@@ -136,3 +136,27 @@ console.log(this.username) //will yield undefined
 ```
 
 As you might guess it correctly , `this.username` will look for a global variable called `username`.As there is no global variable called `username` declared , it will yield undefined.By no means `this.username` will refer to the local username variable because this refers to global object.
+
+#### **3. Sudden Change of Context :
+
+Whoever is executing the task is called context. In other words, what THIS refers to is called context. If we invoke a method of an object litereal, that particular object becomes the context. Context plays an important role in determining what THIS will be pointing to. Let's clarify what i have just said with an example
+
+```javascript
+var person = {
+    username : "zami",
+    sayName : function(){
+        console.log(this.username) // prints "zami"
+    }
+}
+
+person.sayName() // invoke sayName method 
+```
+`person` is an object literal. It has a property called `username` and a method called `sayName`. After invoking `sayName` method it will execute `console.log(this.name)` statement. Here `this.username` will print the `username` property of the `person` object. It is possible because execution context of `sayName` is `person` object. So, inside `sayName` , THIS will be bound to person object.
+
+```javascript
+  this.username === person.username
+  
+  // we can also replace this.username with person.username inside sayName method
+```
+
+Ok, now come to the point. What if there is a `setTimeout` function inside `sayName` method.
