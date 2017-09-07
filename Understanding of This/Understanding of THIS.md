@@ -143,10 +143,13 @@ Whoever is executing the task is called context. In other words, what THIS refer
 
 ```javascript
 var person = {
+
     username : "zami",
+	
     sayName : function(){
         console.log(this.username) // prints "zami"
     }
+	
 }
 
 person.sayName() // invoke sayName method 
@@ -159,4 +162,28 @@ person.sayName() // invoke sayName method
   // we can also replace this.username with person.username inside sayName method
 ```
 
-Ok, now come to the point. What if there is a `setTimeout` function inside `sayName` method.
+Ok, assume  there is a `setTimeout` function inside `sayName` method. And i want to print out the `username` after 5 second of invocation.
+Let's rewrite the sayName method of person object.
+
+```javascript
+var person = {
+    username = "zami",
+	
+	sayName : function(){
+	
+	    setTimeout(function(){
+		             console.log(this.username)
+				},5000)
+				
+	}
+	
+	//invoke the sayName method
+	
+	person.sayName() // will print undefined
+	
+```
+
+Inside setTimeout THIS doesn't point to `person` object. Because setTimeout itself is a function and context gets change for each function. Javascript
+engine binds `person` as the context of sayName method. But when sayName gets executed , it encounters another function which is setTimeout and when setTimeout
+gets executed, context gets changed. I will left it here, perhaps I will discuss it another time as it deserves a separate article and way out of the range
+of this article.
