@@ -221,7 +221,9 @@ var person = {
 			console.log(this.username) //prints the value of username property
 					
 			function inner(){
-				console.log(this) // here THIS will be window or global object
+			
+			console.log(this) // here THIS will be window or global object
+				
 			}
 			
 			inner() // invoke inner function
