@@ -208,7 +208,7 @@ Let's explain the four points stated above with an example.
 	   
 ```javascript
 
-console.log(this) // here THIS refers to window
+console.log(this) // here THIS refers to global/window
 
 var person = {
 
@@ -222,7 +222,7 @@ var person = {
 					
 			function inner(){
 			
-			    console.log(this) // here THIS will be window or global object
+			    console.log(this) // here THIS will be window or global/window object
 				
 			}
 			
