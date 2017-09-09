@@ -216,17 +216,17 @@ var person = {
 	 
 	 sayName  : function(){
 	 
-					console.log(this) // here THIS will be person
+			console.log(this) // here THIS will be person
 					
-					console.log(this.username) //prints the value of username property
+			console.log(this.username) //prints the value of username property
 					
-					function inner(){
-						console.log(this) // here THIS will be window or global object
-					}
+			function inner(){
+				console.log(this) // here THIS will be window or global object
+			}
+			
+			inner() // invoke inner function
 					
-					inner() // invoke inner function
-					
-			  }
+		}
 			  
 }
 
