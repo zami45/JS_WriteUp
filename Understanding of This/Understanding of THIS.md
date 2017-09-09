@@ -294,7 +294,7 @@ Implicit binding also takes place when we create new instance of a class with ne
 
 function Person(){
     this.username = "zami";
-this.sayName  = function (){
+    this.sayName  = function (){
 	            console.log(this);
 	    }
 			 
