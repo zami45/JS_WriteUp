@@ -262,9 +262,61 @@ the context object to the functions that are declared inside a particular object
 fall subject to default binding which is global object.Thats why `console.log(this)` inside `inner` function prints window in the console. So, THIS refers to the global/window 
 object inside `inner` function.
 
+
+#How THIS gets bound to a particular object 
 	   
+I suppose you already get the idea that THIS can refer to a default value which is global object or it can be bound to a particular javascript object.There are two ways to bind THIS 
+to a particular object in javascript.   
 	   
-	   
-	   
-	   
-	   
+####Implicit binding :
+
+Implicit binding of THIS happens when we invoke a method of an object or create a new instance of a class.
+
+```javascript
+var person = {
+
+    username : "zami",
+	sayName  : function(){
+	          console.log(this)
+			  }
+}
+
+person.sayName() // invoke sayName method of person object
+```
+
+Here we have an object literal called person.When we invoke the sayName method of person object, THIS automatically gets bound to that object on which the method is defined. In our
+case it gets bound to person object.
+
+Implicit binding also takes place when we create new instance of a class with new keyword.Let's see this in action with another example
+
+```javascript
+// first declare a constructor function which will act as a boiler plate for our newly created instance
+
+function Person(){
+    this.username = "zami";
+	this.sayName  = function (){
+	             console.log(this);
+	         }
+			 
+// create an instance of person constructor
+
+var p = new Person()
+
+/*
+it will create an object under the hood call p.
+p object will have a property called username and a method called sayName
+*/
+
+p.sayName() // will print the p object in the console
+
+// THIS will be set to p object here
+
+// let's create another instance of person constructor
+
+p2 = new Person() 
+
+p2.sayName() // It will print p2 object in the console, THIS will be set to p2 object
+
+```
+
+
