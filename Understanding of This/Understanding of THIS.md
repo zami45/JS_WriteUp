@@ -268,7 +268,7 @@ object inside `inner` function.
 I suppose you already get the idea that THIS can refer to a default value which is global object or it can be bound to a particular javascript object.There are two ways to bind THIS 
 to a particular object in javascript.   
 	   
-#### Implicit binding :
+### Implicit Binding :
 
 Implicit binding of THIS happens when we invoke a method of an object or create a new instance of a class.
 
@@ -322,4 +322,32 @@ p2.sayName() // It will print p2 object in the console, THIS will be set to p2 o
 
 ```
 
+### Explicit Binding
 
+Explicit binding is required when we want to manipulate the THIS value. Sometimes we need THIS to be set to an object of our own choosing.Fortunately javascript has some built in 
+ways to manipulate THIS value. Let's explore them briefly
+
+- **Call**
+
+`call` is method which helps to set this value inside a function. Let's see an example
+
+```javascript
+var person = {
+       username : "zami"
+}
+
+function Shout(){
+   console.log(this.username)
+}
+
+Shout() // prints undefined
+
+Shout.call(person) // prints "zami"
+
+```
+
+Now let's take a closer look. Here an object literal called `person` is declared. It has only one property called `username`.We also defined a function called `Shout` which logs 
+`this.username`. As you already know THIS inside a function by default points to window/global object. That's why invoking `Shout` in global context prints undefined in the console.
+Because as you might have guessed, THIS inside `Shout` is global.Thus it's trying to find a global variable called `username` but fails. Thus prints undefined in the console. But if
+we use call method during invocation of Shout function and pass person object as a parameter, it binds the THIS inside Shout to person object instead of global object. That's why it
+successfully prints the value of `person.username` as `THIS.username` int the console.
