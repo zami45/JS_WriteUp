@@ -187,3 +187,77 @@ Inside setTimeout THIS doesn't point to `person` object. Because setTimeout itse
 engine binds `person` as the context of sayName method. But when sayName gets executed , it encounters another function which is setTimeout and when setTimeout
 gets executed, context gets changed. I will left it here, perhaps I will discuss it another time as it deserves a separate article and way out of the range
 of this article.
+
+# What THIS is all about ?
+ 
+       As i've already mentioned, THIS refers to the `EXECUTION CONTEXT. Execution context is a topic for another discussion. What you need to know is,
+	   execution context indicates where the control is at the moment during javascript execution.If it feels confusing, don't worry. Following example 
+	   will clarify your confusion. If you pay close attention, you will apprehend the general idea about execution context and why it is responsible 
+	   for determining what THIS will be pointing to during javascript execution.
+	   
+	   If you go through the illustration i've given while discussing scope, you will see that inside javascript world there are two different kinds of scope
+	   ,one is global and another is local. When javascript begin executing the code, it first enters into the global context. Global context is window. So in 
+	   global context(or I can say global scope), THIS refers to window. Let's explain the concept of context First.
+	   
+	   i)   At the beginning of execution , execution context is global.
+	   ii)  When we invoke any function , execution enters that function's private context.
+	   iii) If that function's context is not bound with any object, the context is window/global.THIS refers to global object.
+	   iv)  If the context is bound with an object, THIS refers to that object
+	   
+	   Let's explain the four points stated above with an example. 
+	   
+	   ```javascript
+	   
+	   console.log(this) // here THIS refers to window
+	   
+	   var person = {
+	   
+	         username : "zami",
+			 
+			 sayName  : function(){
+			 
+			                console.log(this) // here THIS will be person
+							
+							console.log(this.username) //prints the value of username property
+							
+			                function inner(){
+				                console.log(this) // here THIS will be window or global object
+							}
+							
+							inner() // invoke inner function
+							
+			          }
+					  
+	   }
+	   
+	   person.sayName() //  invoke sayName 
+	   ```
+	   What's going on here? Let's explain step by step.Here I have a `person` object.It has a property called `username` and a method called `sayName`. Inside `sayName` there
+	   is another function called `inner`. 
+	   
+	   At the beginning of execution, javascript engine enters into the global context. That's why THIS refers to global object inside global scope.
+	   
+	   ```javascript
+	   console.log(this) // so, it will pint window object in the console
+	   ```
+	   
+	   Then, it found an object called person and maps it into memory.Then it finds an invocation of sayName method of the person object.
+	   
+	   ```javascript
+	   person.sayName() // it invokes sayName method and set THIS inside the function to person object
+	   ```
+	   That implies why the first `console.log(this)` inside sayName method prints `person` object in the console.Because as we invoked the sayName method under the context of 
+	   person object. THIS now indicates `person` object. That makes sense why putting a `console.log(this.username)` inside sayName method will print the valu of username property
+	   of person object.
+	   
+	   Now execution comes to the invocation of `inner` function. The point is, when javascript engine maps internal variables and function of an object to memeory, it doesn't bind
+	   the context object to the functions that are declared inside a particular object method. That means person object is not boudn with the inner function. As a result inner function 
+	   fall subject to default binding which is global object.Thats why `console.log(this)` inside `inner` function prints window in the console. So, THIS refers to the global/window 
+	   object inside `inner` function.
+	   
+	   
+	   
+	   
+	   
+	   
+	   
