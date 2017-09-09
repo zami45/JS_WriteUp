@@ -294,9 +294,9 @@ Implicit binding also takes place when we create new instance of a class with ne
 
 function Person(){
     this.username = "zami";
-	this.sayName  = function (){
-	             console.log(this);
-	         }
+this.sayName  = function (){
+	            console.log(this);
+	    }
 			 
 // create an instance of person constructor
 
@@ -307,9 +307,12 @@ it will create an object under the hood call p.
 p object will have a property called username and a method called sayName
 */
 
-p.sayName() // will print the p object in the console
+p.sayName() 
 
-// THIS will be set to p object here
+/*
+will print the p object in the console
+THIS will be set to p object here
+*/
 
 // let's create another instance of person constructor
 
