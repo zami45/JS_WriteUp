@@ -268,7 +268,7 @@ object inside `inner` function.
 I suppose you already get the idea that THIS can refer to a default value which is global object or it can be bound to a particular javascript object.There are two ways to bind THIS 
 to a particular object in javascript.   
 	   
-####Implicit binding :
+#### Implicit binding :
 
 Implicit binding of THIS happens when we invoke a method of an object or create a new instance of a class.
 
