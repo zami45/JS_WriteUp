@@ -201,10 +201,13 @@ If you go through the illustration i've given while discussing scope, you will s
 ,one is global and another is local. When javascript begin executing the code, it first enters into the global context. Global context is window. So in 
 global context(or I can say global scope), THIS refers to window. Let's explain the concept of context First.
 
-i)   At the beginning of execution , execution context is global.
-ii)  When we invoke any function , execution enters that function's private context.
-iii) If that function's context is not bound with any object, the context is window/global.THIS refers to global object.
-iv)  If the context is bound with an object, THIS refers to that object
+**i)   At the beginning of execution , execution context is global.**
+
+**ii)  When we invoke any function , execution enters that function's private context.**
+
+**iii) If that function's context is not bound with any object, the context is window/global.THIS refers to global object.**
+
+**iv)  If the context is bound with an object, THIS refers to that object**
 
 Let's explain the four points stated above with an example. 
 	   
