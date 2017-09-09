@@ -327,7 +327,7 @@ p2.sayName() // It will print p2 object in the console, THIS will be set to p2 o
 Explicit binding is required when we want to manipulate the THIS value. Sometimes we need THIS to be set to an object of our own choosing.Fortunately javascript has some built in 
 ways to manipulate THIS value. Let's explore them briefly
 
-- **Call**
+#### Call
 
 `call` is method which helps to set this value inside a function. Let's see an example
 
@@ -336,13 +336,13 @@ var person = {
        username : "zami"
 }
 
-function Shout(){
-   console.log(this.username)
+function Shout(greetings){
+   console.log(greetings+" "+this.username)
 }
 
 Shout() // prints undefined
 
-Shout.call(person) // prints "zami"
+Shout.call(person,"welcome!") // prints "welcome! zami"
 
 ```
 
@@ -351,3 +351,28 @@ Now let's take a closer look. Here an object literal called `person` is declared
 Because as you might have guessed, THIS inside `Shout` is global.Thus it's trying to find a global variable called `username` but fails. Thus prints undefined in the console. But if
 we use call method during invocation of Shout function and pass person object as a parameter, it binds the THIS inside Shout to person object instead of global object. That's why it
 successfully prints the value of `person.username` as `THIS.username` int the console.
+
+#### Apply
+
+`apply` is a built in javascript method which does the same thing as `call`. Only difference being that in case of `call` we need to send the function parameters by separating them by
+comma and for `apply` we need to pass all the required parameters in an array.Let's see an example
+
+```javascript
+var person = {
+         username : "zami"
+}
+
+function Shout(greetings,message){
+    console.log(greetings+" "+this.username+","+message)
+}
+
+Shout.apply(perosn,["hello","you are now a member of our football team."]) 
+
+/*
+first parameters is the context object which is person
+Here Shout requires two parameters
+That's why second parameter is an array containg two stirng value required for the parameters of Shout function
+*/
+
+```
+
