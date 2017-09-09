@@ -376,3 +376,39 @@ That's why second parameter is an array containg two stirng value required for t
 
 ```
 
+#### Bind
+
+`bind` is also a method to bind THIS to a particular context rather than the default one. `bind` is completely different for both `call` and `apply`. Unlike `call` and `apply`, `bind` doesn't
+invoke the function, rather it returns a completely new function with THIS value set to a context of our own choosing.Following example will shed some light on the concept
+
+```javascript
+var person = {
+       username : "zami"
+}
+
+function Shout(){
+   console.log(this.username)
+}
+
+var shout_two = Shout.bind(person)
+
+shout_two() // prints "zami"
+
+```
+
+Here we would like to bind THIS inside `Shout` to the person object. For this we have used `bind` method.
+
+```javascript
+var shout_two = Shout.bind(person)
+```
+
+what the avove piece of code is doing is, it binds THIS inside Shout function to person and returns a new function which gets assigned to `shout_two` variable. Now `shout_two` is a new function which 
+is exactly similar to `Shout` function , only difference being that THIS inside shout_two function is set to person object. That's the reason why after invocking 
+shout_two we get the value of `username` property of `person` object.
+
+# Conclusion
+
+If you are reading this paragraph, i can hope that you have completed the whole topic. That's pretty much conclude the discussion of THIS. To be honest, THIS is a confusing topic. It still confuse me 
+from time to time. The code I've provided so far is simple and precise. Of course you will find more complex scenario in real life coding. But what I've written in this article is the basic concept and
+it will apply to any scenario in real life practice. I believe if you go through the example code and watch the results on the console and tweak them just a bit to see how the behaviour changes, you will
+be able to understand any piece of code you will ever come across. 
