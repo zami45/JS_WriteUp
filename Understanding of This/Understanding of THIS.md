@@ -254,7 +254,7 @@ Then, it found an object called person and maps it into memory.Then it finds an 
 person.sayName() // it invokes sayName method and set THIS inside the function to person object
 ```
 That implies why the first `console.log(this)` inside sayName method prints `person` object in the console.Because as we invoked the sayName method under the context of 
-person object. THIS now indicates `person` object. That makes sense why putting a `console.log(this.username)` inside sayName method will print the valu of username property
+person object, THIS will not set to `person` object. That makes sense why putting a `console.log(this.username)` inside sayName method will print the value of username property
 of person object.
 	   
 Now execution comes to the invocation of `inner` function. The point is, when javascript engine maps internal variables and function of an object to memeory, it doesn't bind
