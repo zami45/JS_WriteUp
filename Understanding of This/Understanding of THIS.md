@@ -190,7 +190,7 @@ of this article.
 
 # What THIS is all about ?
  
-As i've already mentioned, THIS refers to the `EXECUTION CONTEXT. Execution context is a topic for another discussion. What you need to know is,
+As i've already mentioned, THIS refers to the `EXECUTION CONTEXT`. Execution context is a topic for another discussion. What you need to know is,
 execution context indicates where the control is at the moment during javascript execution.If it feels confusing, don't worry. Following example 
 will clarify your confusion. If you pay close attention, you will apprehend the general idea about execution context and why it is responsible 
 for determining what THIS will be pointing to during javascript execution.
