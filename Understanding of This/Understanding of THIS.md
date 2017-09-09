@@ -222,7 +222,7 @@ var person = {
 					
 			function inner(){
 			
-			console.log(this) // here THIS will be window or global object
+			    console.log(this) // here THIS will be window or global object
 				
 			}
 			
