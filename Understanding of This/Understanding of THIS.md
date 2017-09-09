@@ -195,6 +195,8 @@ execution context indicates where the control is at the moment during javascript
 will clarify your confusion. If you pay close attention, you will apprehend the general idea about execution context and why it is responsible 
 for determining what THIS will be pointing to during javascript execution.
 
+>This refers to execution context
+
 If you go through the illustration i've given while discussing scope, you will see that inside javascript world there are two different kinds of scope
 ,one is global and another is local. When javascript begin executing the code, it first enters into the global context. Global context is window. So in 
 global context(or I can say global scope), THIS refers to window. Let's explain the concept of context First.
