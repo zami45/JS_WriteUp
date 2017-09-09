@@ -263,7 +263,7 @@ fall subject to default binding which is global object.Thats why `console.log(th
 object inside `inner` function.
 
 
-#How THIS gets bound to a particular object 
+# How THIS gets bound to a particular object 
 	   
 I suppose you already get the idea that THIS can refer to a default value which is global object or it can be bound to a particular javascript object.There are two ways to bind THIS 
 to a particular object in javascript.   
