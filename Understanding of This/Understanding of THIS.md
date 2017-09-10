@@ -1,5 +1,4 @@
-Introduction
-------------
+# Introduction
 
 One of the most confusing and misused keyword in javascript is THIS keyword.For a javascript beginner THIS feels like shrouded in mystery.But if properly used THIS can be proved as a valuable asset in the toolbox of a javascript developer.Here I would like to shed some light on different misused cases of THIS keyword and techniques to manipulate THIS in a javascript application.As the word this bears its own meaning ,in this discussion i will refer to the keyword THIS written in capital letter.The concept might appear too difficult to wrap you head around,but if you give effort and practice the concept by writting small code you will get the hang of 
 it eventually.You could just follow along and try out the code provided in the discussion in your browser.
