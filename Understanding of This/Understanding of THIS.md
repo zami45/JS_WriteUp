@@ -307,8 +307,8 @@ is exactly similar to `Shout` function , only difference being that THIS inside 
 shout_two we get the value of `username` property of `person` object.
 
 
-Some Common Misuse of THIS 
-----------------------------
+# Some Common Misuse of THIS 
+
 
 In order to write better and modular javascript code, understanding the concept of THIS is a prerequisite. Incomplete or improper 
 understanding may lead to many unresolved and misunderstood bugs in the code. Some common errors which may appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
