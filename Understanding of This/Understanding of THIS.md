@@ -73,150 +73,28 @@ console.log(this.global_var) // access global_var thorugh THIS. So, THIS === win
 both works equally.
 
 
-Some Common Misuse of THIS 
-----------------------------
-
-In order to write better and modular javascript code, understanding the concept of THIS is a prerequisite. Incomplete or improper 
-understanding may lead to many unresolved and misunderstood bugs in the code. Some common errors which may appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
-
-#### 1. Creating Unwanted Global Variables :
-
-
-Now the actual point is how we can create global variable unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in javascript. They are used to create new object.General layout of  a constructor function is 
-
-```javascript
-function Person(){
-
-   this.username = "zami"
-   
-}
-```
-
-just keep in mind that if no other execution context is provided, THIS inside a function refers to global object.It is a default behaviour of THIS keyword.
-
-Try to think what might happen if we invoke Person function. A global variable called username can be created on the fly when javascript interpreter hit `this.username = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `username` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
-
-If we invoke the Person function , a global variable called username will be created and `"zami"` string will be assigned to that username variable.In the mean time a property called username will be added to global object as i've stated earlier.
-
-```javascript
-function Person(){
-
-    this.username = "zami";
-	
-}
-
-Person()
-
-//a property called username is added to global object
-//now username variable can be accessed from global scope 
-
-console.log(username) // prints "zami" 
-
-// as a property called username is added to global object, we can access it thourgh THIS or window
-
-console.log(this.username) // also prints "zami"
-
-console.log(window.username) // also prints "zami"
-```
-
-Thus using THIS, we can create global variable on the fly if we don't have proper understanding of THIS keyword.
-
-#### **2. Some Consider THIS Points to Function Scope :**
-
-
-It is tempting to use THIS as a mean of accessing local variable inside a function. Consider the following piece of code 
-
-```javascript
-function Person(){
-
-    var username = "zami"
-	
-    console.log(this.username)
-
-}
-
-Person() // prints undefined 
-```
-
-here username is a local variable declared inside a function called Person. Variable username is not available in global scope as it belongs to the local scope of Person function. Someone may find it provocative to use THIS keyword to access the username variable inside the function scope. Here, after invocation you will see `undefined` in the console.
-
-```javascript
-console.log(this.username) //will yield undefined
-```
-
-As you might guess it correctly , `this.username` will look for a global variable called `username`.As there is no global variable called `username` declared , it will yield undefined.By no means `this.username` will refer to the local username variable because this refers to global object.
-
-#### **3. Sudden Change of Context :
-
-Whoever is executing the task is called context. In other words, what THIS refers to is called context. If we invoke a method of an object litereal, that particular object becomes the context. Context plays an important role in determining what THIS will be pointing to. Let's clarify what i have just said with an example
-
-```javascript
-var person = {
-
-    username : "zami",
-	
-    sayName : function(){
-        console.log(this.username) // prints "zami"
-    }
-	
-}
-
-person.sayName() // invoke sayName method 
-```
-`person` is an object literal. It has a property called `username` and a method called `sayName`. After invoking `sayName` method it will execute `console.log(this.name)` statement. Here `this.username` will print the `username` property of the `person` object. It is possible because execution context of `sayName` is `person` object. So, inside `sayName` , THIS will be bound to person object.
-
-```javascript
-  this.username === person.username
-  
-  // we can also replace this.username with person.username inside sayName method
-```
-
-Ok, assume  there is a `setTimeout` function inside `sayName` method. And i want to print out the `username` after 5 second of invocation.
-Let's rewrite the sayName method of person object.
-
-```javascript
-var person = {
-    username = "zami",
-	
-	sayName : function(){
-	
-	    setTimeout(function(){
-		             console.log(this.username)
-				},5000)
-				
-	}
-	
-	//invoke the sayName method
-	
-	person.sayName() // will print undefined
-	
-```
-
-Inside setTimeout THIS doesn't point to `person` object. Because setTimeout itself is a function and context gets change for each function. Javascript
-engine binds `person` as the context of sayName method. But when sayName gets executed , it encounters another function which is setTimeout and when setTimeout
-gets executed, context gets changed. I will left it here, perhaps I will discuss it another time as it deserves a separate article and way out of the range
-of this article.
-
 # What THIS is all about ?
  
-As i've already mentioned, THIS refers to the `EXECUTION CONTEXT`. Execution context is a topic for another discussion. What you need to know is,
-execution context indicates where the control is at the moment during javascript execution.If it feels confusing, don't worry. Following example 
-will clarify your confusion. If you pay close attention, you will apprehend the general idea about execution context and why it is responsible 
-for determining what THIS will be pointing to during javascript execution.
+What you have just learned about scope will help you to understand THIS with more clarity. As I've already mentioned, THIS refers to the `EXECUTION CONTEXT`. 
+Execution context is a topic for another discussion. What you need to know is,execution context indicates where the control is at the moment during javascript 
+execution.If it feels confusing, don't worry. Following example will clarify your confusion. If you pay close attention, you will apprehend the general idea 
+about execution context and why it is responsible for determining what THIS will be pointing to during javascript execution.
 
 > ### **This refers to execution context...............**
 
-If you go through the illustration i've given while discussing scope, you will see that inside javascript world there are two different kinds of scope
+If you go through the illustration I've given while discussing scope, you will see that inside javascript world there are two different kinds of scope
 ,one is global and another is local. When javascript begin executing the code, it first enters into the global context. Global context is window. So in 
 global context(or I can say global scope), THIS refers to window. Let's explain the concept of context First.
 
-**i)   At the beginning of execution , execution context is global.**
+**i)   At the beginning of execution,javascript engine enters into global scope.So,execution context is global.**
 
-**ii)  When we invoke any function , execution enters that function's private context.**
+**ii)  When we invoke any function ,javascript engine enters into that function's local scope.Execution context will become private context of that function.**
 
 **iii) If that function's context is not bound with any object, the context is window/global.THIS refers to global object.**
 
 **iv)  If the context is bound with an object, THIS refers to that object**
+
+**v)   After function execution is over,javascript engine jumps out of the function and land into global context again.
 
 Let's explain the four points stated above with an example. 
 	   
@@ -247,6 +125,9 @@ var person = {
 }
 
 person.sayName() //  invoke sayName 
+
+console.log(this) // execution context jumps back into global context right after finishing function execution.
+
 ```
 What's going on here? Let's explain step by step.Here I have a `person` object.It has a property called `username` and a method called `sayName`. Inside `sayName` there
 is another function called `inner`. 
@@ -414,6 +295,131 @@ var shout_two = Shout.bind(person)
 what the avove piece of code is doing is, it binds THIS inside Shout function to person and returns a new function which gets assigned to `shout_two` variable. Now `shout_two` is a new function which 
 is exactly similar to `Shout` function , only difference being that THIS inside shout_two function is set to person object. That's the reason why after invocking 
 shout_two we get the value of `username` property of `person` object.
+
+
+Some Common Misuse of THIS 
+----------------------------
+
+In order to write better and modular javascript code, understanding the concept of THIS is a prerequisite. Incomplete or improper 
+understanding may lead to many unresolved and misunderstood bugs in the code. Some common errors which may appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
+
+#### 1. Creating Unwanted Global Variables :
+
+
+Now the actual point is how we can create global variable unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in javascript. They are used to create new object.General layout of  a constructor function is 
+
+```javascript
+function Person(){
+
+   this.username = "zami"
+   
+}
+```
+
+just keep in mind that if no other execution context is provided, THIS inside a function refers to global object.It is a default behaviour of THIS keyword.
+
+Try to think what might happen if we invoke Person function. A global variable called username can be created on the fly when javascript interpreter hit `this.username = "zami"` expression inside Person function.Besically what's happening here is javascript interpreter is looking for a   property called `username` in `THIS/global` object. If such property not found in global object ,it creates one and assign value to it. On the other hand if such a property already exists, it just assign value to the existing one. 
+
+If we invoke the Person function , a global variable called username will be created and `"zami"` string will be assigned to that username variable.In the mean time a property called username will be added to global object as i've stated earlier.
+
+```javascript
+function Person(){
+
+    this.username = "zami";
+	
+}
+
+Person()
+
+//a property called username is added to global object
+//now username variable can be accessed from global scope 
+
+console.log(username) // prints "zami" 
+
+// as a property called username is added to global object, we can access it thourgh THIS or window
+
+console.log(this.username) // also prints "zami"
+
+console.log(window.username) // also prints "zami"
+```
+
+Thus using THIS, we can create global variable on the fly if we don't have proper understanding of THIS keyword.
+
+#### **2. Some Consider THIS Points to Function Scope :**
+
+
+It is tempting to use THIS as a mean of accessing local variable inside a function. Consider the following piece of code 
+
+```javascript
+function Person(){
+
+    var username = "zami"
+	
+    console.log(this.username)
+
+}
+
+Person() // prints undefined 
+```
+
+here username is a local variable declared inside a function called Person. Variable username is not available in global scope as it belongs to the local scope of Person function. Someone may find it provocative to use THIS keyword to access the username variable inside the function scope. Here, after invocation you will see `undefined` in the console.
+
+```javascript
+console.log(this.username) //will yield undefined
+```
+
+As you might guess it correctly , `this.username` will look for a global variable called `username`.As there is no global variable called `username` declared , it will yield undefined.By no means `this.username` will refer to the local username variable because this refers to global object.
+
+#### **3. Sudden Change of Context :**
+
+Whoever is executing the task is called context. In other words, what THIS refers to is called context. If we invoke a method of an object litereal, that particular object becomes the context. Context plays an important role in determining what THIS will be pointing to. Let's clarify what i have just said with an example
+
+```javascript
+var person = {
+
+    username : "zami",
+	
+    sayName : function(){
+        console.log(this.username) // prints "zami"
+    }
+	
+}
+
+person.sayName() // invoke sayName method 
+```
+`person` is an object literal. It has a property called `username` and a method called `sayName`. After invoking `sayName` method it will execute `console.log(this.name)` statement. Here `this.username` will print the `username` property of the `person` object. It is possible because execution context of `sayName` is `person` object. So, inside `sayName` , THIS will be bound to person object.
+
+```javascript
+  this.username === person.username
+  
+  // we can also replace this.username with person.username inside sayName method
+```
+
+Ok, assume  there is a `setTimeout` function inside `sayName` method. And i want to print out the `username` after 5 second of invocation.
+Let's rewrite the sayName method of person object.
+
+```javascript
+var person = {
+    username = "zami",
+	
+	sayName : function(){
+	
+	    setTimeout(function(){
+		             console.log(this.username)
+				},5000)
+				
+	}
+	
+	//invoke the sayName method
+	
+	person.sayName() // will print undefined
+	
+```
+
+Inside setTimeout THIS doesn't point to `person` object. Because setTimeout itself is a function and context gets change for each function. Javascript
+engine binds `person` as the context of sayName method. But when sayName gets executed , it encounters another function which is setTimeout and when setTimeout
+gets executed, context gets changed. I will left it here, perhaps I will discuss it another time as it deserves a separate article and way out of the range
+of this article.
 
 # Conclusion
 
