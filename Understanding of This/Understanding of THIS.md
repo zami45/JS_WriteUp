@@ -131,6 +131,8 @@ person.sayName() //  invoke sayName
 /*
  Now execution context will jumps back into global context right after 
  finishing function execution.
+ As execution is out of a function's private scope, it will again 
+ point to global object
  
 */
 console.log(this) 
