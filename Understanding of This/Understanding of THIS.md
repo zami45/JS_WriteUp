@@ -84,19 +84,21 @@ about execution context and why it is responsible for determining what THIS will
 
 If you go through the illustration I've given while discussing scope, you will see that inside javascript world there are two different kinds of scope
 ,one is global and another is local. When javascript begin executing the code, it first enters into the global context. Global context is window. So in 
-global context(or I can say global scope), THIS refers to window. Let's explain the concept of context First.
+global context(or I can say global scope), THIS refers to window. 
+
+Then concept of `scope` and `context` are related to each other.Let's explain the relation between scope and context First :
 
 **i)   At the beginning of execution,javascript engine enters into global scope.So,execution context is global.**
 
-**ii)  When we invoke any function ,javascript engine enters into that function's local scope.Execution context will become private context of that function.**
+**ii)  When we invoke any function ,javascript engine enters into that function's local scope.Execution context will become the private context of that function.**
 
-**iii) If that function's context is not bound with any object, the context is window/global.THIS refers to global object.**
+**iii) If that function's context is not bound with any object,Then though the context is private,THIS will refers to global/window object.**
 
-**iv)  If the context is bound with an object, THIS refers to that object**
+**iv)  If the context is bound with an object, THIS refers to that bound object inside the function's private context.**
 
-**v)   After function execution is over,javascript engine jumps out of the function and land into global context again.
+**v)   After function execution is over,javascript engine jumps out of the function and land into global context again.So THIS will refer to global/window object again.**
 
-Let's explain the four points stated above with an example. 
+Let's explain the five points stated above with an example. 
 	   
 ```javascript
 
