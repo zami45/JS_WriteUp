@@ -4,18 +4,17 @@ Introduction
 One of the most confusing and misused keyword in javascript is THIS keyword.For a javascript beginner THIS feels like shrouded in mystery.But if properly used THIS can be proved as a valuable asset in the toolbox of a javascript developer.Here I would like to shed some light on different misused cases of THIS keyword and techniques to manipulate THIS in a javascript application.As the word this bears its own meaning ,in this discussion i will refer to the keyword THIS written in capital letter.The concept might appear too difficult to wrap you head around,but if you give effort and practice the concept by writting small code you will get the hang of 
 it eventually.You could just follow along and try out the code provided in the discussion in your browser.
 
-Some Common Misuse of THIS 
-----------------------------
+#### **Let's Talk About Scope First:** 
 
-In order to write better and modular javascript code, understanding the concept of THIS is a prerequisite. Incomplete or improper 
-understanding may lead to many unresolved and misunderstood bugs in the code. Some common errors which may appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
-
-#### 1. Creating Unwanted Global Variables :
-
+Any javascript programmer using THIS without any prior knowledge of the outcome of the code may caught up in a situation which is hard to debug, confusing and very difficult to fix. To understand THIS one must
+have clear understanding of another beautiful concept of javascript which is called `scope`. Before getting into how THIS works and how we can manipulate it, I would like to discuss a bit about the concept of
+scope.
 
 We all know global variables, right? These are the variables which can be accessed from anywhere in your javascript code.A variable's
 visibility depends on its scope. Global variables can be accessed from global scope and function scope (Local Scope) equally. Chances are that you might not be familier with the concept of scope. So,I would like to discuss here about the concept of scope in a nutshell.
  
+> Scope determines the visibility level...........
+
 Simply put, Scope controls the visibility of a variable. Variables declared in global scope , has global visibility.They are accessible from anywhere in the script.On the other hand local variable resides in local scope (alos known as function scope). Visibility of local variable is limited to local scope. Generally Outside environment can not access a local variable. Of course there are some ways to interact with local variables from outside environment, But that discussion is for later.For now let's just stick to the fact that local variables are confined to local scope. They are only available in local scope. So we can say, javascript deals with two different kinds of scopes,They are :
 
 - **Global Scope**
@@ -72,6 +71,16 @@ console.log(window.global_var) // access global_var through window object, print
 console.log(this.global_var) // access global_var thorugh THIS. So, THIS === window
 ```
 both works equally.
+
+
+Some Common Misuse of THIS 
+----------------------------
+
+In order to write better and modular javascript code, understanding the concept of THIS is a prerequisite. Incomplete or improper 
+understanding may lead to many unresolved and misunderstood bugs in the code. Some common errors which may appear in your code due to incomplete understanding of THIS keyword will be discussed in this topic
+
+#### 1. Creating Unwanted Global Variables :
+
 
 Now the actual point is how we can create global variable unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in javascript. They are used to create new object.General layout of  a constructor function is 
 
