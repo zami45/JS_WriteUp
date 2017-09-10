@@ -411,19 +411,24 @@ Let's rewrite the sayName method of person object.
 
 ```javascript
 var person = {
+
     username = "zami",
 	
 	sayName : function(){
 	
 	    setTimeout(function(){
-		             console.log(this.username)
-				},5000)
+		            
+			console.log(this.username)
+				
+		},5000)
 				
 	}
+
+}
 	
-	//invoke the sayName method
+//invoke the sayName method
 	
-	person.sayName() // will print undefined
+person.sayName() // will print undefined
 	
 ```
 
