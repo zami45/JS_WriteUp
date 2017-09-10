@@ -128,7 +128,14 @@ var person = {
 
 person.sayName() //  invoke sayName 
 
-console.log(this) // execution context jumps back into global context right after finishing function execution.
+/*
+ Now execution context will jumps back into global context right after 
+ finishing function execution.
+ 
+*/
+console.log(this) 
+
+
 
 ```
 What's going on here? Let's explain step by step.Here I have a `person` object.It has a property called `username` and a method called `sayName`. Inside `sayName` there
