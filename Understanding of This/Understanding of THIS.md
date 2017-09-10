@@ -308,7 +308,7 @@ understanding may lead to many unresolved and misunderstood bugs in the code. So
 #### 1. Creating Unwanted Global Variables :
 
 
-Now the actual point is how we can create global variable unknowingly due to lack of proper understanding of THIS keyword.We are all familiar with constructor function in javascript. They are used to create new object.General layout of  a constructor function is 
+How we can create global variable unknowingly due to lack of proper understanding of THIS keyword? We are all familiar with constructor function in javascript. They are used to create new object.General layout of  a constructor function is 
 
 ```javascript
 function Person(){
