@@ -74,19 +74,14 @@ both works equally.
 
 # What THIS is all about ?
  
-What you have just learned about scope will help you to understand THIS with more clarity. As I've already mentioned, THIS refers to the `EXECUTION CONTEXT`. 
-Execution context is a topic for another discussion. What you need to know is,execution context indicates where the control is at the moment during javascript 
-execution.If it feels confusing, don't worry. Following example will clarify your confusion. If you pay close attention, you will apprehend the general idea 
-about execution context and why it is responsible for determining what THIS will be pointing to during javascript execution.
-
-> ### **This refers to execution context...............**
-
 What you have just learned about scope will help you to understand this with more clarity. As I've already mentioned,this refers to the EXECUTION CONTEXT. Execution context is a topic for another discussion. What you need to know is,execution context indicates which object is bound to the current scope.
 
-Execution context refers to the object which is bound to the current scope.
+> ### **Execution context refers to the object which is bound to the current scope**
 
 If it feels confusing, don't worry. Following example will clarify your confusion. If you pay close attention, you will apprehend the general idea about execution context and why it is responsible for determining what this will be pointing to during javascript execution.
-this refers to execution context...............
+
+> ### **this refers to execution context**
+
 If you go through the illustration I've given while discussing scope, you will see that inside javascript world there are two different kinds of scope ,one is global and another is local. When javascript begin executing the code, it first enters into the global context. Global context is window. So in global context(or I can say global scope), this refers to window.
 Concept of scope and context are related to each other.Let's explain the relation between scope and context First :
 
