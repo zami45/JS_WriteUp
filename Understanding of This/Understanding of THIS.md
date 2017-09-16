@@ -81,21 +81,22 @@ about execution context and why it is responsible for determining what THIS will
 
 > ### **This refers to execution context...............**
 
-If you go through the illustration I've given while discussing scope, you will see that inside javascript world there are two different kinds of scope
-,one is global and another is local. When javascript begin executing the code, it first enters into the global context. Global context is window. So in 
-global context(or I can say global scope), THIS refers to window. 
+What you have just learned about scope will help you to understand this with more clarity. As I've already mentioned,this refers to the EXECUTION CONTEXT. Execution context is a topic for another discussion. What you need to know is,execution context indicates which object is bound to the current scope.
 
-Then concept of `scope` and `context` are related to each other.Let's explain the relation between scope and context First :
+Execution context refers to the object which is bound to the current scope.
 
-**i)   At the beginning of execution,javascript engine enters into global scope.So,execution context is global.**
+If it feels confusing, don't worry. Following example will clarify your confusion. If you pay close attention, you will apprehend the general idea about execution context and why it is responsible for determining what this will be pointing to during javascript execution.
+this refers to execution context...............
+If you go through the illustration I've given while discussing scope, you will see that inside javascript world there are two different kinds of scope ,one is global and another is local. When javascript begin executing the code, it first enters into the global context. Global context is window. So in global context(or I can say global scope), this refers to window.
+Concept of scope and context are related to each other.Let's explain the relation between scope and context First :
 
-**ii)  When we invoke any function ,javascript engine enters into that function's local scope.Execution context will become the private context of that function.**
+**-   At the beginning of execution,javascript engine enters into global scope.So,execution context is global.So this will point to global object.**
 
-**iii) If that function's context is not bound with any object,Then though the context is private,THIS will refers to global/window object.**
+**-  When we invoke any function ,javascript engine enters into that function's local scope.But Execution context will still be global, so this will still point to global object inside that function's local scope.**
 
-**iv)  If the context is bound with an object, THIS refers to that bound object inside the function's private context.**
+**-  If we bind the function with an object other than global object, context will refer to that bound object inside the function's private scope instead of global object.So this will now become that particular object.**
 
-**v)   After function execution is over,javascript engine jumps out of the function and land into global context again.So THIS will refer to global/window object again.**
+**-  After function execution is over,javascript engine jumps out of the function and land into global scope again.So this will refer to global/window object again.**
 
 Let's explain the five points stated above with an example. 
 	   
