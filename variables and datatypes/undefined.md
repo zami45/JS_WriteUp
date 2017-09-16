@@ -76,7 +76,7 @@ A variable called `undefined` is created inside `myFunc` function's local scope 
 Surprisingly it does pass the test. The `if` statement proves to be `truthy` and code inside the `if` statement gets executed.
 
 
-> ### **`undefined` is just another variable in local scope....**
+> ### **`undefined` is a valid variable name in local scope....**
  
  
 That's interesting but as well as problematic. How we can check for undefined value in `if-else` statement now. A solution might be not using 
