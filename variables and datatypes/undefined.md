@@ -45,7 +45,9 @@ In javascript every function ships with it's own private scope. It is called loc
 execution enters into a local scope. Now what `undefined` have to do with it. We've already seen that we can not change the default 
 behaviour of `undefined`. As MDN page say
 
+
 > ### **undefined is a property of the global object; i.e., it is a variable in global scope....**
+
 
 Can you identify the subtle difference? It doesn't say anything about local scope. That means we can create a variable called `undefined`
 in the local scope,doesn't it? Let's give it a try
@@ -71,13 +73,17 @@ myFunc() // prints "undefined is set to true
 A variable called `undefined` is created inside `myFunc` function's local scope and it's value is set to `true`. Will it pass the test this time?
 Surprisingly it does pass the test. The `if` statement proves to be `truthy` and code inside the `if` statement gets executed.
 
+
 > ### **`undefined` is just another variable in local scope....**
+ 
  
 That's interesting but as well as problematic. How we can check for undefined value in `if-else` statement now. A solution might be not using 
 `undefined` for checking test cases at all.Then what's is the alternative? you might ask.the answer is `void` function. `void` takes an expression
 and returns a `undefined` value.
 
-> ### **`void` always returns undefined,it doesn't care about the scope.... **
+
+> ### ** `void` always returns undefined,it doesn't care about the scope.... **
+
 
 ```javascript
 var three = 3
