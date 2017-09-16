@@ -82,7 +82,7 @@ That's interesting but as well as problematic. How we can check for undefined va
 and returns a `undefined` value.
 
 
-> ### ** `void` always returns undefined,it doesn't care about the scope.... **
+> ### **`void` always returns undefined,it doesn't care about the scope....**
 
 
 ```javascript
