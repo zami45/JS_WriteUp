@@ -1,6 +1,6 @@
 # Undefined & Scope
 
-you might notice something strange in the title. It's doesn't make sense. `undefined` is undefined. What does it have 
+you might notice something strange in the title. It's doesn't make sense,right? `undefined` is undefined. What does it have 
 to with scope. In case you don't know scope, check out this link.We all know what `undefined` is. It is a primitive 
 value which means not defined. Say, if a variable is declared and it is not initialized , the variable will print 
 `undefined` in the console.Let's declare one and see for yourself in the console.
