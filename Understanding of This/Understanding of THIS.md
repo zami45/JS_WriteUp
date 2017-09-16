@@ -1,6 +1,7 @@
 # Introduction
 
 One of the most confusing and misused keyword in javascript is `this` keyword.For a javascript beginner, `this` feels like shrouded in mystery.But if properly used, `this` can be proved as a valuable asset in the toolbox of a javascript developer.Here I would like to shed some light on what `this` actually is  and techniques to manipulate `this` in a javascript application.The concept might appear too difficult to wrap you head around,but if you give effort and practice the concept by writing small code you will get the hang of it eventually.You could just follow along and try out the code provided in the discussion in your browser.
+
 # Let's Talk About Scope
 
 Any javascript programmer using `this` without any prior knowledge of the outcome of the code may caught up in a situation which is hard to debug, confusing and very difficult to fix. To understand `this` one must
