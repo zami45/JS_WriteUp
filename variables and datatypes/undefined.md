@@ -39,7 +39,9 @@ if(undefined){
 
 It will print the log statement inside `else` case.So setting `undefined` to `true` will not work in global scope. Creating a variable
 named `undefined` and setting a `truthy` value to it will not pass the test of `if-else` block.The `undefined` property of global object 
-will prevail in global scope. But scenario might change with the change of scope and pre-assumed norms can change with it.
+will prevail in global scope. 
+
+> ### **But scenario might change with the change of scope and pre-assumed notions can change with it...**
 
 In javascript every function ships with it's own private scope. It is called local scope.When a function invocation occurs, javascript 
 execution enters into a local scope. Now what `undefined` have to do with it. We've already seen that we can not change the default 
