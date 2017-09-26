@@ -49,7 +49,7 @@ Above illustration explains that global variable can be accessed from both in gl
  keep in mind that `this` refers to global object (window object) by default.Any global variable becomes a property of global object.We can access any global variable through `this` keyword.`this` is analogas to window object. If we check strict equality between `this` and window , it will return true 
  
  ```javascript
- `this` === window // true
+ this === window // true
 ```
 Let's justify what i've just said with an example.For `this`, we need to create a global variable first. Let's create one 
 
